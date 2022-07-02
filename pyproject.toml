@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "uh50"
+version = "0.1.0"
+description = "Read out UltraHeat 50"
+authors = ["Berry den Hartog <berrydenhartog@mailbox.org>"]
+license = "Apache-2.0"
+readme = "README.rst"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = {extras = ["all"], version = "^0.78.0"}
+pytest = "^7.1.2"
+
+[tool.poetry.dev-dependencies]
+black = "^22.6.0"
+pylint = "^2.14.4"
+flake8 = "^4.0.1"
+coverage = "^6.4.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+addopts = "--strict-markers"
+
+markers = [
+    "slow"
+]
+testpaths = [
+    "tests"
+]
+
+[tool.black]
+target-version = ['py310']
+
+[tool.coverage.paths]
+source = ["uh50"]
+
+[tool.coverage.run]
+branch = true
+source = ["uh50"]
+omit = []
+
+[tool.coverage.report]
+fail_under = 99
