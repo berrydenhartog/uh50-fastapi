@@ -1,9 +1,6 @@
-import pytest
-
 from fastapi.testclient import TestClient
 
-from uh50.main import app
-
+from uh50.__main__ import app
 
 client = TestClient(app)
 

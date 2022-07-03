@@ -8,7 +8,6 @@
         ".venv": true
     },
     "editor.formatOnSave": true,
-    "editor.formatOnPaste": true,
     "diffEditor.maxFileSize": 5,
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
@@ -19,5 +18,11 @@
         "PATH": "C:\\Users\\user\\AppData\\Roaming\\Python\\Scripts;C:\\Users\\user\\AppData\\Roaming\\Python\\Python310\\Scripts;${env:Path};"
     },
     "python.formatting.provider": "black",
-    "python.linting.flake8Enabled": true
+    "python.linting.flake8Enabled": true,
+    "python.linting.mypyEnabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.sortImports.path": "isort",
+    "editor.codeActionsOnSave": {
+        "python.sortImports": true,
+    },
 }
