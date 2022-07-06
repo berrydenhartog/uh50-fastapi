@@ -1,7 +1,7 @@
 UltraHeat 50
 ============
 
-UltraHeat 50 is a lightweight `WSGI`_ web application framework.
+UltraHeat 50 is a lightweight `WSGI`_ website that exposes the ultraheat 50 metrics. The project poetry for package dependencies and docker for running.
 
 Installing
 ----------
@@ -11,6 +11,8 @@ Install and update using `poetry`_:
 .. code-block:: text
 
     $ poetry build
+    or
+    $ docker build . -T ultraheat50
 
 
 
@@ -51,6 +53,8 @@ Run using `poetry`_:
 .. code-block:: text
 
     $ poetry run python uh50
+    or
+    $ docker run -p 8000:8000 -t ultraheat50
 
 
 

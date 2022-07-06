@@ -15,6 +15,14 @@ COPY ./README.rst ./README.rst
 RUN poetry install --no-dev
 RUN poetry build
 
+FROM builder as tester
+RUN poetry install
+RUN . ./venv/bin/activate
+CMD ["pytest"]
+
+FROM tester as developer
+CMD ["python", "uh50"]
+
 FROM python:${PYTHONVERSION}-slim
 ARG PYTHONVERSION
 
@@ -24,4 +32,4 @@ COPY --from=builder /app/dist/*.whl /tmp/
 RUN pip install --no-cache-dir /tmp/*.whl
 EXPOSE 8000
 
-CMD ["uvicorn" , "uh50.app", "--host","0.0.0.0", "--port","8000" ]
+CMD ["uvicorn" , "uh50.__main__:app", "--host","0.0.0.0", "--port","8000" ]

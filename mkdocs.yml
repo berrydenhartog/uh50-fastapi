@@ -1,0 +1,4 @@
+site_name: Ultraheat50
+nav:
+    - Home: index.md
+theme: readthedocs

@@ -6,4 +6,5 @@ set -x
 # Check README.md is up to date
 pytest
 coverage run -m pytest
-coverage report
+coverage report --show-missing
+coverage xml
